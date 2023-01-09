@@ -64,6 +64,7 @@ class AidanCore:
 
 
 
+
     def end(self):
         pass
         self.o.cw(self.weights)
