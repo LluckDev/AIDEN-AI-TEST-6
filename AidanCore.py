@@ -59,6 +59,8 @@ class AidanCore:
         #creates window
         self.w = display(screenX=800,screenY=600,title="AIDEN Ai",)
         self.w.sendkeys(self.keys)
+        self.w.addcolorpalette("red","#ff0000")
+        self.w.rect("test",50,50,20,20,fill=self.w.cp["red"])
 
 
 
