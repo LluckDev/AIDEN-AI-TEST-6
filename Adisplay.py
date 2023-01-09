@@ -39,6 +39,7 @@ class display:
         self.mx = 0
         self.my = 0
         self.sendkeyF = {}
+        self.cp = {}
 
     def key(self, tag):
 
@@ -267,3 +268,6 @@ class display:
 
     def sendkeys(self,function):
         self.sendkeyF["keys"] = function
+
+    def addcolorpalette(self,tag,color):
+        self.cp[tag] = color
