@@ -1,6 +1,7 @@
 from tkinter import *
 class display:
     def __init__(self,grid=100,screenX=100,screenY=100,bgc="#ffffff",fullscreen=True):
+
         self.storage = {}
         self.extra = {}
         self.data = []
@@ -28,12 +29,16 @@ class display:
         self.curkey = None
         self.odk = None
         self.keypressed = False
+        self.keysendfunction = None
 
 
     def key(self,tag):
 
         self.curkey = tag.char
         self.keypressed = True
+
+
+
 
     def callback(self,event):
         self.rep = 0
@@ -43,6 +48,7 @@ class display:
         self.update()
     def close(self):
         self.runing = False
+
 
 
 
@@ -60,6 +66,12 @@ class display:
         self.my -= self.window.winfo_y()
         self.my -= 30
         self.my = (self.incrment / self.winy) * self.my
+
+
+        if self.keypressed and self.keysendfunction != None:
+            self.keysendfunction(self.curkey)
+            self.keypressed = False
+
 
 
 
@@ -210,6 +222,11 @@ class display:
         return self.window.winfo_pointery()
     def mouseXY(self):
         return self.window.winfo_pointerxy()
+
+    def asignkeyfunction(self,func):
+        print(func)
+        self.keysendfunction = func
+
 
 
 
