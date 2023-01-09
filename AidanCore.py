@@ -57,7 +57,9 @@ class AidanCore:
 
     def window_start(self):
         #creates window
-        self.w = display(screenX=800,screenY=600)
+        self.w = display(screenX=800,screenY=600,title="AIDEN Ai",)
+        self.w.sendkeys(self.keys)
+
 
 
 
